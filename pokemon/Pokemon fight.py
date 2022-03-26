@@ -2,10 +2,7 @@ import random
 import csv
 from damage import damage
 from donnes import *
-
-def Find_Poke(Poke):
-    return [pokemon_data(Poke)]
-    
+ 
 def pokemon_data(Nom):  
     with open('pokemon-gen1-data.csv', 'r') as csv_file:
         csv_reader = csv.reader(csv_file)
@@ -238,8 +235,8 @@ def Poke_Attack(PA,PD,Attack_Power,Attack_Type,Attack_Tod,Item = 1):
         return damage(100, Attack_Power, int(PA[0][8]), int(PD[0][9]), Stab, Type)
     else:
         return damage(100, Attack_Power, int(PA[0][6]), int(PD[0][7]), Stab, Type)    
-Poke0 = Find_Poke("Charizard")
-Poke1 = Find_Poke("Blastoise")
+Poke0 = pokemon_data("Charizard")
+Poke1 = pokemon_data("Blastoise")
 print(Poke0)
 print(Poke1)
 print(Poke_Attack(Poke0,Poke1,80,"NORMAL","SP",Item = 1))
