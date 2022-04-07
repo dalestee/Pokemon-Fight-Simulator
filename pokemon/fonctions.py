@@ -23,10 +23,10 @@ def pokemon_data(Nom):
             if line[0] == Nom:
                 return [[line[2],line[3],line[4],line[5],line[6],line[7],line[8],line[9],line[10],line[11],line[12]]]        
 
-def calc_Hp(B_HP,Level,IV = 0,EV = 0):
+def calc_Hp(B_HP,Level,IV = 31,EV = 0):
     return  int(0.01 * (2 * B_HP + IV + int(0.25 * EV)) * Level) + Level + 10
 
-def calc_Stat(B_ST,Level,Nature = 1,IV = 0,EV = 0):
+def calc_Stat(B_ST,Level,Nature = 1,IV = 31,EV = 0):
     return (int(0.01 * (2 * B_ST + IV + int(0.25 * EV)) * Level) + 5) * Nature
     
 def Poke_Attack(PA,PD,Attack_Power,Attack_Type,Attack_Tod,Item = 1):
